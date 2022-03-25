@@ -1,0 +1,12 @@
+[
+	{
+		"requestType"		: "",
+		"cardName"			: "",
+		"cardHolderName"	: "",
+		"cardNumber"		: "",
+		"expirationDate"	: "",
+		"securityCode"	    : ""
+		
+	}
+]
+

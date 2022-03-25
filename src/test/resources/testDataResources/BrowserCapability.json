@@ -1,0 +1,20 @@
+[
+	{
+		"browserType"	:	"WinChrome72",
+		"browser"		:	"chrome",
+		"platform"		:	"window",
+		"version"		:	"72"
+	},
+	{
+		"browserType"	:	"WinIE11",
+		"browser"		:	"internet explorer",
+		"platform"		:	"window",
+		"version"		:	"11"
+	},
+	{
+		"browserType"	:	"WinFirefox66",
+		"browser"		:	"firefox",
+		"platform"		:	"window",
+		"version"		:	"66"
+	}
+]

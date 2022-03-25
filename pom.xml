@@ -1,0 +1,270 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.BelUsa</groupId>
+	<artifactId>BelUsaAutomation</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>BelUsaAutomation</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		 <maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java-compiler.version>8</java-compiler.version>
+		<maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<aspectj.version>1.9.6</aspectj.version>
+		<selenium.version>4.0.0-beta-1</selenium.version>
+		<selenium-server.version>4.0.0-alpha-2</selenium-server.version>
+		<rest-assured.version>3.1.0</rest-assured.version>
+		<testng.version>7.4.0</testng.version>
+		<guava.version>30.1-jre</guava.version>
+		<appium.java-client.version>7.0.0</appium.java-client.version>
+		<junit4.version>4.13.1</junit4.version>
+		<junit-jupiter>5.7.0</junit-jupiter>
+		<assertj.version>3.19.0</assertj.version>
+		<commons-io.version>2.6</commons-io.version>
+		<poi-ooxml.version>3.9</poi-ooxml.version>
+		<javafaker.version>1.0.2</javafaker.version>
+		<log4j.version>2.14.0</log4j.version>
+		<javax.mail.version>1.5.5</javax.mail.version>
+		<json.version>20200518</json.version>
+		<webdrivermanager.version>4.3.1</webdrivermanager.version>
+		<owner.version>1.0.12</owner.version>
+		<extent.version>4.0.6</extent.version>
+		<klov.version>5.0.6</klov.version>
+		<allure.version>2.13.8</allure.version>
+		<allure-maven.version>2.10.0</allure-maven.version>
+		<allure-environment-writer.version>1.0.0</allure-environment-writer.version>
+		<allure.cmd.download.url>
+			https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline
+		</allure.cmd.download.url>
+		<suite>local</suite>
+	</properties>
+
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+<!--			<version>${selenium.version}</version>-->
+			<version>3.141.59</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi-ooxml.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>${javax.mail.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extent.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/klov-reporter -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>klov-reporter</artifactId>
+			<version>${klov.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>${appium.java-client.version}</version>
+		</dependency>
+
+		<!--https://mvnrepository.com/artifact/io.rest-assured/rest-assured-->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${json.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aeonbits.owner</groupId>
+			<artifactId>owner</artifactId>
+			<version>${owner.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${webdrivermanager.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-attachments</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.automatedowl</groupId>
+			<artifactId>allure-environment-writer</artifactId>
+			<version>${allure-environment-writer.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>3.4.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.zxing/javase -->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>3.4.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.13</version>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.10.3</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+		<profiles>
+
+		</profiles>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+					<configuration>
+						<testFailureIgnore> true </testFailureIgnore>
+						<!--suppress UnresolvedMavenProperty -->
+						<groups>${IncludeTag}</groups>
+						<!--suppress UnresolvedMavenProperty -->
+						<excludedGroups>${ExcludeTag}</excludedGroups>
+						<!-- Suite testng xml file to consider for test execution -->
+						<suiteXmlFiles>
+
+							<!--________________________________________________________________________________________________________-->
+							<!--______________________________________The below XMLs only test 1 browser________________________________-->
+							<!--________________________________________________________________________________________________________-->
+							<!--______________________________________Front End________________________________-->
+
+							<!--______________________________________Back End________________________________-->
+
+							<!--_________________________________Ready for PROD________________________________-->
+							<!--______________________________________Front End________________________________-->
+							<!--______________________________________Back End________________________________-->
+
+
+						</suiteXmlFiles>
+						<argLine>
+							-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+						</argLine>
+						<testFailureIgnore>true</testFailureIgnore>
+						<systemPropertyVariables>
+							<allure.results.directory>target/allure-results</allure.results.directory>
+						</systemPropertyVariables>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.aspectj</groupId>
+							<artifactId>aspectjweaver</artifactId>
+							<version>${aspectj.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>io.qameta.allure</groupId>
+					<artifactId>allure-maven</artifactId>
+					<version>${allure-maven.version}</version>
+					<configuration>
+						<reportVersion>${allure.version}</reportVersion>
+						<allureDownloadUrl>
+							${allure.cmd.download.url}/${allure.version}/allure-commandline-${allure.version}.zip
+						</allureDownloadUrl>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>${java-compiler.version}</source>
+						<target>${java-compiler.version}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

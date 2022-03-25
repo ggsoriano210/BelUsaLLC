@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+  <suite name="DMHomePage" parallel="tests" thread-count="5">
+  <listeners>
+      <listener class-name="com.BelUsa.testNG.AnnotationTransformer" />
+  </listeners>
+<!--  <test name="DMHomePage1">-->
+<!--       <parameter name="platform" value="Chrome"></parameter> -->
+<!--      <classes>-->
+<!--          <class name="com.BelUsa." />-->
+<!--      </classes>-->
+<!--  </test>-->
+</suite> <!-- Suite -->
+

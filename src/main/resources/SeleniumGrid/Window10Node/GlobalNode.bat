@@ -1,0 +1,1 @@
+java -jar -Dwebdriver.chrome.driver="%cd%\chromedriver.exe" -Dwebdriver.ie.driver="%cd%\IEDriverServer.exe" -Dwebdriver.gecko.driver="%cd%\geckodriver.exe" -Dwebdriver.edge.driver="%cd%\MicrosoftWebDriver.exe" selenium-server-standalone-3.141.59.jar -role node -nodeConfig GlobalFile.json
