@@ -1,8 +1,11 @@
 package com.BelUsa.pageMethods;
 
 import com.BelUsa.baseClass.ScenarioContext;
+import com.BelUsa.enums.Context;
 import com.BelUsa.managers.FileReaderManager;
 import com.BelUsa.managers.PageObjectManager;
+import com.BelUsa.utility.JSExecuteUtil;
+import com.BelUsa.utility.TestUtil;
 import com.BelUsa.utility.ValidationUtil;
 import com.BelUsa.utility.WaitUtil;
 import io.qameta.allure.Step;
@@ -23,32 +26,30 @@ public class DM_HomePageMethods {
 	public synchronized void launchDiscountMugApp() {
 
 		//This will catch the exception when browser does not load DiscountMug application
-			ValidationUtil.validateTestStep("Start Launching of DiscountMug Application", true);
+		ValidationUtil.validateTestStep("Start Launching of DiscountMug Application", true);
 
-			//launch application under test
-			driver.get(FileReaderManager.getInstance().getConfigReader().getDiscountMugApplicationURL());
+		//launch application under test
+		driver.get(FileReaderManager.getInstance().getConfigReader().getDiscountMugApplicationURL());
 
-			//get current url from application
-			String actualURL = driver.getCurrentUrl();
-			//get url from config file
-			String expectedURL = FileReaderManager.getInstance().getConfigReader().getDiscountMugApplicationURL();
+		//get current url from application
+		String actualURL = driver.getCurrentUrl();
 
-			//disable Print popup
-			((JavascriptExecutor)driver).executeScript("window.print=function(){};");
+		//get url from config file
+		String expectedURL = FileReaderManager.getInstance().getConfigReader().getDiscountMugApplicationURL();
+		scenarioContext.setContext(Context.HOMEPAGE_URL,expectedURL);
 
-				//validate correct url is open
-				ValidationUtil.validateTestStep("Validate Discount Mug application open Successfully",actualURL, expectedURL);
+		//validate correct url is open
+		ValidationUtil.validateTestStep("Validate Discount Mug application open Successfully",actualURL, expectedURL);
 
-		WaitUtil.untilTimeCompleted(5000);
-		if(FileReaderManager.getInstance().getConfigReader().getDiscountMugApplicationURL().equals("https://www.discountmugs.com/")){
-			WaitUtil.untilPageLoadComplete(driver);
-			if(driver.findElements(By.xpath("//div[contains(@class, 'pencil-banner-container')]")).size() >= 1 ) {
-				JavascriptExecutor js = null;
-				if (driver instanceof JavascriptExecutor) {
-					js = (JavascriptExecutor) driver;
-				}
-				js.executeScript("return document.getElementsByClassName('pencil-banner-container')[0].remove();");
-			}
+		if(FileReaderManager.getInstance().getConfigReader().getDiscountMugApplicationURL().equals(FileReaderManager.getInstance().getConfigReader().getDiscountMugApplicationURL())){
+			WaitUtil.untilTimeCompleted(5000);
+
+			//closing promo container
+			driver.switchTo().activeElement().sendKeys(Keys.chord(Keys.ESCAPE));
+			WaitUtil.untilTimeCompleted(5000);
+
+			ValidationUtil.validateTestStep("Promo Container closed",true);
+
 		}
 	}
 }

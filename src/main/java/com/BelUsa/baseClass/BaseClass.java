@@ -196,7 +196,7 @@ public class BaseClass {
 
 		if(getDriver()!=null){
 			//close current window
-//			getDriver().quit();
+			getDriver().quit();
 		}
 
 		threadDriver.set(null);
@@ -236,7 +236,7 @@ public class BaseClass {
 		if(getDriver()!=null){
 			System.out.println("Driver still hasn't torn down");
 			System.out.println(ClassName);
-//			getDriver().quit();
+			getDriver().quit();
 		}
 		extent.flush();
 	}

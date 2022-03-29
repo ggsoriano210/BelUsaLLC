@@ -4,6 +4,8 @@ public enum Context {
 	//Base Class Global Variables
 	CLASS_NAME,
 	HOMEPAGE_BROWSER,
+	HOMEPAGE_URL,
+	PRODUCT_NAME,
 
 	//Home Page Global variable
 	LOG_IN_EMAIL,
