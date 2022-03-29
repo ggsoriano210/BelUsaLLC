@@ -20,6 +20,7 @@ public class JSExecuteUtil {
 	public static void clickOnElement(WebDriver driver,WebElement webElement) {
 		javaScriptExecute = (JavascriptExecutor)driver;
 		javaScriptExecute.executeScript("arguments[0].click();", webElement);
+		WaitUtil.untilTimeCompleted(1500);
 	}
 	
 	// **********************************************************************************************

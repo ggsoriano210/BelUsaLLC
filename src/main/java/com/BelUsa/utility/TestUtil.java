@@ -1044,6 +1044,7 @@ public class TestUtil {
 		//create drop down objec
 		Select drpdwn = new Select(webElement);
 		drpdwn.selectByIndex(indexValue);
+		WaitUtil.untilTimeCompleted(1000);
 	}
 
 	//**********************************************************************************************
@@ -1342,13 +1343,13 @@ public class TestUtil {
 	// Return: NA
 	// **********************************************************************************************
 	@Step("User clicked on {element} element")
-	public synchronized void clickOnElement(WebElement element){
+	public static void clickOnElement(WebElement element){
 		element.click();
 		WaitUtil.untilTimeCompleted(1000);
 	}
 
 	@Step("User clicked on {element} element")
-	public synchronized void clickOnElement(List<WebElement> element){
+	public static void clickOnElement(List<WebElement> element){
 
 		for(int i=0; i<element.size(); i++) {
 			if(element.get(i).isDisplayed()) {
@@ -1357,6 +1358,11 @@ public class TestUtil {
 			}
 		}
 	}
+
+	public static int getRandomRangeIntegerNumber(int minNum, int maxNum){
+		return (int) ((Math.random() * (maxNum - minNum)) + minNum);
+	}
+
 }
 
 

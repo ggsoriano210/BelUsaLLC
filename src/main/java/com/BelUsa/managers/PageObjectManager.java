@@ -8,20 +8,15 @@ public class PageObjectManager {
 	
 	//declare class variable used for PageObjectManager class
 	private WebDriver driver;
-	private Common common;
 	private DM_HomePage dmHomePage;
+	private DM_Category dmCategory;
+	private DM_CustomProductPage dmCustomProductPage;
+	private DM_Product dmProduct;
+	private DM_YourCart dmYourCart;
 
 	//declare constructor to initialize selenium driver
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
-	}
-
-	public Common getCommon() {
-		if(common == null) {
-			return common = new Common(driver);
-		}else {
-			return common;
-		}
 	}
 
 	public DM_HomePage getDiscountMugHomePage() {
@@ -32,4 +27,35 @@ public class PageObjectManager {
 		}
 	}
 
+	public DM_Category getDiscountMugCategoryPage() {
+		if(dmCategory == null) {
+			return dmCategory = new DM_Category(driver);
+		}else {
+			return dmCategory;
+		}
+	}
+
+	public DM_CustomProductPage getDiscountMugCustomProductsPage() {
+		if(dmCustomProductPage == null) {
+			return dmCustomProductPage = new DM_CustomProductPage(driver);
+		}else {
+			return dmCustomProductPage;
+		}
+	}
+
+	public DM_Product getDiscountMugProductPage() {
+		if(dmProduct == null) {
+			return dmProduct = new DM_Product(driver);
+		}else {
+			return dmProduct;
+		}
+	}
+
+	public DM_YourCart getDiscountMugYourCart() {
+		if(dmYourCart == null) {
+			return dmYourCart = new DM_YourCart(driver);
+		}else {
+			return dmYourCart;
+		}
+	}
 }

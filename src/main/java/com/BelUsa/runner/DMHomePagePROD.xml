@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+  <suite name="DMHomePagePROD" parallel="tests" thread-count="5">
+  <listeners>
+      <listener class-name="com.BelUsa.testNG.AnnotationTransformer" />
+  </listeners>
+  <test name="DMHomePagePROD1">
+       <parameter name="platform" value="Chrome"></parameter>
+      <classes>
+          <class name="com.DiscountMugs.HomePage.TC7079" />
+      </classes>
+  </test>
+    <test name="DMHomePagePROD2">
+        <parameter name="platform" value="Chrome"></parameter>
+        <classes>
+            <class name="com.DiscountMugs.HomePage.TC7080" />
+        </classes>
+    </test>
+    <test name="DMHomePagePROD3">
+        <parameter name="platform" value="Chrome"></parameter>
+        <classes>
+            <class name="com.DiscountMugs.HomePage.TC7081" />
+        </classes>
+    </test>
+    <test name="DMHomePagePROD4">
+        <parameter name="platform" value="Chrome"></parameter>
+        <classes>
+            <class name="com.DiscountMugs.HomePage.TC7082" />
+        </classes>
+    </test>
+    <test name="DMHomePagePROD5">
+        <parameter name="platform" value="Chrome"></parameter>
+        <classes>
+            <class name="com.DiscountMugs.HomePage.TC7084" />
+        </classes>
+    </test>
+    <test name="DMHomePagePROD6">
+        <parameter name="platform" value="Chrome"></parameter>
+        <classes>
+            <class name="com.DiscountMugs.HomePage.TC7085" />
+        </classes>
+    </test>
+    <test name="DMHomePagePROD7">
+        <parameter name="platform" value="Chrome"></parameter>
+        <classes>
+            <class name="com.DiscountMugs.HomePage.TC7086" />
+        </classes>
+    </test>
+</suite> <!-- Suite -->
+
